@@ -146,3 +146,68 @@ Users can complete their profile later via banner.
 
 **Pattern:** MVP (Model–View–Presenter)
 
+---
+
+### Model
+- Data entities
+- GPS & calculations
+- Local storage
+
+### View
+- UI screens (Compose)
+
+### Presenter
+- Business logic
+- Data coordination
+
+---
+
+## 🧱 Data Models
+
+### User
+- uid
+- phone/email
+- name (optional)
+- weight (optional)
+- goal
+- createdAt
+
+### Run
+- runId
+- userId
+- distance
+- duration
+- avgPace
+- calories
+- date
+- routePoints
+- destinationPoint (optional)
+
+---
+
+## 🚀 Future Roadmap
+
+### Phase 2
+- Route mode
+- Charts & analytics
+- Notifications
+
+### Phase 3
+- Friendlies
+- Shared goals
+- Cloud sync
+
+---
+
+## 🏆 MVP Success Criteria
+
+The app is complete when users can:
+- Log in
+- Track runs
+- View summaries
+- Access history
+- Earn milestones
+- View stats
+- Stay logged in
+
+
