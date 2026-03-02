@@ -90,7 +90,6 @@ fun LoginScreen(
                 onClick = {
                     val isValid = presenter.login(input)
                     if (isValid) {
-                        SessionManager.isLoggedIn = true
 
                         scope.launch {
                             DataStoreManager.setLoggedIn(context, true)
