@@ -1,0 +1,117 @@
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Button
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.example.learning.model.DataStoreManager
+import com.example.learning.model.SessionManager
+import com.example.learning.navigation.Screens
+import kotlinx.coroutines.launch
+
+@Composable
+fun HomeScreen(
+    navController: NavController,
+    modifier: Modifier = Modifier
+) {
+    val scope = rememberCoroutineScope()
+    val context = LocalContext.current
+    val name = SessionManager.username
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(WindowInsets.safeDrawing.asPaddingValues()),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+
+            Text(
+                text = "Home Screen",
+                fontSize = 30.sp,
+                modifier = Modifier
+                    .align(Alignment.TopCenter)
+            )
+
+            Text(
+                text = "Hello, $name!",
+                fontSize = 30.sp,
+                modifier = Modifier.align(Alignment.Center)
+
+            )
+        }
+
+        Spacer(modifier = modifier.height(10.dp))
+
+        Row(
+            modifier = modifier,
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Button(
+                onClick = {
+                    SessionManager.isLoggedIn = false
+
+                    scope.launch {
+                        DataStoreManager.setLoggedIn(context, false)
+                        DataStoreManager.saveUsername(context, "")
+                    }
+
+                    navController.navigate(Screens.Intro.route) {
+                        popUpTo(0) { inclusive = true }
+                    }
+                }
+            ) {
+                Text(
+                    text = "Logout"
+                )
+            }
+
+            Spacer(modifier = Modifier.width(10.dp))
+
+            Button(
+                onClick = { navController.navigate(Screens.History.route) }
+            ) {
+                Text(
+                    text = "History"
+                )
+            }
+        }
+    }
+}
+
+@Preview
+@Composable
+private fun HomeScreenPreview() {
+    Surface {
+        val navController = rememberNavController()
+        HomeScreen(
+            navController = navController
+        )
+    }
+}

@@ -1,0 +1,6 @@
+Navigation mainly focuses on:
+1. NavController => the person who moves between the rooms.
+2. NavHost => the map of the house
+3. Route => the room name
+4. screen => the room
+5. composable()

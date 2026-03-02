@@ -1,0 +1,5 @@
+Presenter handles the logic completely, UI does not touch any kind of logic.
+It just updates with the data to be presented on the screen whereas presenter handles
+the background logic and all the computation.
+
+.isNotBlank() = tells if the field is empty in any way including all blank spaces.
