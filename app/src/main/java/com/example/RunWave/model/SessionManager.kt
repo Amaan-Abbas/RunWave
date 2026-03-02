@@ -1,4 +1,4 @@
-package com.example.learning.model
+package com.example.RunWave.model
 // later this will become Firebase/DataStore
 object SessionManager {
     var isLoggedIn: Boolean = false

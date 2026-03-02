@@ -1,6 +1,6 @@
-package com.example.learning.presenter
+package com.example.RunWave.presenter
 
-import com.example.learning.model.SessionManager
+import com.example.RunWave.model.SessionManager
 
 // auth
 class AuthPresenter {

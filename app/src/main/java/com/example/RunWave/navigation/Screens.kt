@@ -1,4 +1,4 @@
-package com.example.learning.navigation
+package com.example.RunWave.navigation
 
 // This file defines the routes to the screens.
 sealed class Screens(val route: String) {

@@ -1,4 +1,4 @@
-package com.example.learning
+package com.example.RunWave
 
 import org.junit.Test
 

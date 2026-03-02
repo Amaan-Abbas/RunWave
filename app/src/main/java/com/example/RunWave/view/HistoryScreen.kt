@@ -1,4 +1,4 @@
-package com.example.learning.view
+package com.example.RunWave.view
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -19,9 +19,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.learning.model.DataStoreManager
-import com.example.learning.model.SessionManager
-import com.example.learning.navigation.Screens
+import com.example.RunWave.model.DataStoreManager
+import com.example.RunWave.model.SessionManager
+import com.example.RunWave.navigation.Screens
 import kotlinx.coroutines.launch
 
 @Composable
