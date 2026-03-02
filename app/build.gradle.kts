@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.RunWave"
+    namespace = "com.example.runWave"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1

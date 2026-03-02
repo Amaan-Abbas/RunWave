@@ -1,4 +1,4 @@
-package com.example.RunWave
+package com.example.runWave
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

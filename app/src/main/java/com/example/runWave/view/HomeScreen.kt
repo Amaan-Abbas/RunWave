@@ -1,4 +1,4 @@
-package com.example.RunWave.view
+package com.example.runWave.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.RunWave.model.SessionManager
+import com.example.runWave.model.SessionManager
 
 @Composable
 fun HomeScreen(

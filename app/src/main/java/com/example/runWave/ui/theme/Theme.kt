@@ -1,4 +1,4 @@
-package com.example.RunWave.ui.theme
+package com.example.runWave.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

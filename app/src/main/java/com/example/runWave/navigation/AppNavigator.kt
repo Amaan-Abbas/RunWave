@@ -1,4 +1,4 @@
-package com.example.RunWave.navigation
+package com.example.runWave.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -11,12 +11,12 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.RunWave.model.DataStoreManager
-import com.example.RunWave.model.SessionManager
-import com.example.RunWave.view.HistoryScreen
-import com.example.RunWave.view.HomeScreen
-import com.example.RunWave.view.IntroScreen
-import com.example.RunWave.view.LoginScreen
+import com.example.runWave.model.DataStoreManager
+import com.example.runWave.model.SessionManager
+import com.example.runWave.view.HistoryScreen
+import com.example.runWave.view.HomeScreen
+import com.example.runWave.view.IntroScreen
+import com.example.runWave.view.LoginScreen
 import kotlinx.coroutines.flow.first
 
 @Composable

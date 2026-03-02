@@ -1,4 +1,4 @@
-package com.example.RunWave.model
+package com.example.runWave.model
 
 data class User(
     val id: String,

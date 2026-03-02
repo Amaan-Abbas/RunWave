@@ -1,4 +1,4 @@
-package com.example.RunWave.view
+package com.example.runWave.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -26,10 +26,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.RunWave.model.DataStoreManager
-import com.example.RunWave.model.SessionManager
-import com.example.RunWave.navigation.Screens
-import com.example.RunWave.presenter.AuthPresenter
+import com.example.runWave.model.DataStoreManager
+import com.example.runWave.model.SessionManager
+import com.example.runWave.navigation.Screens
+import com.example.runWave.presenter.AuthPresenter
 import kotlinx.coroutines.launch
 
 @Composable

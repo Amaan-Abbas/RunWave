@@ -1,4 +1,4 @@
-package com.example.RunWave.view
+package com.example.runWave.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.RunWave.navigation.Screens
+import com.example.runWave.navigation.Screens
 
 
 @Composable

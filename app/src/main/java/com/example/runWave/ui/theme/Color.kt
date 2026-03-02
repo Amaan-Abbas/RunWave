@@ -1,4 +1,4 @@
-package com.example.RunWave.ui.theme
+package com.example.runWave.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
