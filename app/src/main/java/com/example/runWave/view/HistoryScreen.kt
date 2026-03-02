@@ -54,6 +54,7 @@ fun HistoryScreen(
         Button(
             onClick = {
                 SessionManager.isLoggedIn = false
+                SessionManager.username = ""
 
                 scope.launch {
                     DataStoreManager.setLoggedIn(context, false)
