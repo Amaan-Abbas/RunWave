@@ -11,7 +11,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.runWave.model.DataStoreManager
+import com.example.runWave.data.local.datastore.DataStoreManager
 import com.example.runWave.model.SessionManager
 import com.example.runWave.view.HistoryScreen
 import com.example.runWave.view.HomeScreen

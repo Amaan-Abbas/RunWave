@@ -26,8 +26,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.runWave.model.DataStoreManager
-import com.example.runWave.model.SessionManager
+import com.example.runWave.data.local.datastore.DataStoreManager
 import com.example.runWave.navigation.Screens
 import com.example.runWave.presenter.AuthPresenter
 import kotlinx.coroutines.launch

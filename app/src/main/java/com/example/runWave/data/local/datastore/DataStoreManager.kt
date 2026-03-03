@@ -1,4 +1,4 @@
-package com.example.runWave.model
+package com.example.runWave.data.local.datastore
 
 import android.content.Context
 import androidx.datastore.preferences.core.booleanPreferencesKey

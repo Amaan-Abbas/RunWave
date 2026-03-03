@@ -19,7 +19,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.runWave.model.DataStoreManager
+import com.example.runWave.data.local.datastore.DataStoreManager
 import com.example.runWave.model.SessionManager
 import com.example.runWave.navigation.Screens
 import kotlinx.coroutines.launch
