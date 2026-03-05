@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.runWave.model.SessionManager
+import com.example.runWave.navigation.Screens
 
 @Composable
 fun HomeScreen(
@@ -106,6 +107,12 @@ fun HomeScreen(
         Text(
             text = "No runs recorded yet!"
         )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Button(onClick = { navController.navigate(Screens.History.route)}) {
+            Text("History")
+        }
     }
 }
 
