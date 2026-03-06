@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.example.runWave.data.local.entity.RunEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface RunDao {
@@ -16,5 +17,5 @@ interface RunDao {
     suspend fun deleteRun(run: RunEntity)
 
     @Query("SELECT * FROM Runs ORDER BY dateTimeStart DESC")
-    suspend fun getAllRuns(): List<RunEntity>
+    fun getAllRuns(): Flow<List<RunEntity>>
 }

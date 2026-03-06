@@ -2,6 +2,7 @@ package com.example.runWave.data.repository
 
 import com.example.runWave.data.local.dao.RunDao
 import com.example.runWave.data.local.entity.RunEntity
+import kotlinx.coroutines.flow.Flow
 
 class RunRepositoryImpl(
     private val runDao: RunDao
@@ -14,7 +15,7 @@ class RunRepositoryImpl(
         runDao.deleteRun(run)
     }
 
-    override suspend fun getAllRun(): List<RunEntity> {
+    override fun getAllRun(): Flow<List<RunEntity>> {
         return runDao.getAllRuns()
     }
 }
