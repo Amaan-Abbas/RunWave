@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -111,7 +110,7 @@ fun HomeScreen(
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        Button(onClick = { navController.navigate(Screens.History.route)}) {
+        Button(onClick = { navController.navigate(Screens.History.route) }) {
             Text("History")
         }
     }
@@ -119,8 +118,8 @@ fun HomeScreen(
 
 @Composable
 fun StatsItem(
-    label : String,
-    value : String
+    label: String,
+    value: String
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
