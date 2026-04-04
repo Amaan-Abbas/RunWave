@@ -1,4 +1,4 @@
-package com.example.runWave.view
+package com.example.runWave.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

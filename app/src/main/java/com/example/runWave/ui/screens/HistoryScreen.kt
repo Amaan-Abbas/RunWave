@@ -1,6 +1,5 @@
-package com.example.runWave.view
+package com.example.runWave.ui.screens
 
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
@@ -9,16 +8,17 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -29,6 +29,7 @@ import com.example.runWave.data.repository.RunRepositoryImpl
 import com.example.runWave.model.SessionManager
 import com.example.runWave.navigation.Screens
 import com.example.runWave.presenter.RunPresenter
+import com.example.runWave.ui.components.RunItem
 import kotlinx.coroutines.launch
 
 @Composable
@@ -50,16 +51,22 @@ fun HistoryScreen(
             .fillMaxSize()
             .padding(WindowInsets.safeDrawing.asPaddingValues())
     ) {
-        Box(
+        Text(
+            text = "Recent Activities",
+            fontSize = 22.sp,
+            fontWeight = FontWeight.Bold
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        LazyColumn(
             modifier = modifier
                 .fillMaxSize()
-                .weight(1f),
-            contentAlignment = Alignment.Center
+                .weight(1f)
         ) {
-            Text(
-                text = "This is history screen!",
-                fontSize = 30.sp
-            )
+            items(runs) { run ->
+                RunItem(run)
+            }
         }
 
         Spacer(modifier = Modifier.height(10.dp))

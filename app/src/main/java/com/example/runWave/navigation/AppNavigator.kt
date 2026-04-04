@@ -13,10 +13,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.runWave.data.local.datastore.DataStoreManager
 import com.example.runWave.model.SessionManager
-import com.example.runWave.view.HistoryScreen
-import com.example.runWave.view.HomeScreen
-import com.example.runWave.view.IntroScreen
-import com.example.runWave.view.LoginScreen
+import com.example.runWave.ui.screens.HistoryScreen
+import com.example.runWave.ui.screens.HomeScreen
+import com.example.runWave.ui.screens.IntroScreen
+import com.example.runWave.ui.screens.LoginScreen
 import kotlinx.coroutines.flow.first
 
 @Composable
