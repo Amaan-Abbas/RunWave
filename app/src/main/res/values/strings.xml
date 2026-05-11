@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Learning</string>
+    <string name="OnBoarding_tagLine">Master the road and outpace your previous self with precision tracking designed for those who give it all.</string>
+    <string name="track_your_runs">Track Your Runs.</string>
+    <string name="stay_consistent">Stay Consistent.</string>
+    <string name="Terms_and_Services">By continuing, you agree to our Terms of Service and Privacy Policy.</string>
 </resources>
