@@ -3,7 +3,6 @@ package com.example.runWave.ui.screens
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -24,7 +23,6 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -44,17 +42,17 @@ import com.example.runWave.ui.theme.RunYellow
 
 @Composable
 fun OnboardingPage(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onSignUpClick: () -> Unit = {},
+    onLoginClick: () -> Unit = {}
 //    navController: NavController
 ) {
-
-    val interactionSource = remember { MutableInteractionSource() }
     Column(
         modifier = modifier
             .fillMaxSize()
             .background(RunBackground)
             .padding(WindowInsets.safeDrawing.asPaddingValues())
-            .padding(start = 16.dp, end = 16.dp),
+            .padding(horizontal = 24.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
 
@@ -64,7 +62,7 @@ fun OnboardingPage(
             contentDescription = "Onboarding Image",
             modifier = Modifier
                 .shadow(
-                    elevation = 30.dp,
+                    elevation = 20.dp,
                     shape = RoundedCornerShape(20.dp),
                     ambientColor = RunYellow,
                     spotColor = RunYellow
@@ -89,7 +87,7 @@ fun OnboardingPage(
         Text(
             text = stringResource(R.string.track_your_runs),
             fontWeight = FontWeight.Bold,
-            fontSize = 30.sp,
+            fontSize = 32.sp,
             color = Color.White
         )
 
@@ -98,7 +96,7 @@ fun OnboardingPage(
         Text(
             text = stringResource(R.string.stay_consistent),
             fontWeight = FontWeight.SemiBold,
-            fontSize = 25.sp,
+            fontSize = 26.sp,
             color = RunYellow
         )
 
@@ -106,40 +104,46 @@ fun OnboardingPage(
 
         Text(
             text = stringResource(R.string.OnBoarding_tagLine),
-            color = Color.White,
+            color = Color.White.copy(alpha = 0.8f),
             fontWeight = FontWeight.W300,
             textAlign = TextAlign.Center,
-            modifier = Modifier.fillMaxWidth(0.9f)
+            modifier = Modifier.fillMaxWidth(0.9f),
+            lineHeight = 22.sp
         )
 
-        Spacer(modifier = Modifier.height(50.dp))
+        Spacer(modifier = Modifier.height(24.dp))
 
         LogButton("Sign up", RunYellow, Color.Black, null)
 
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(12.dp))
 
-        LogButton("Login", RunBackground, Color.White, ButtonDefaults.outlinedButtonBorder())
+        LogButton(
+            "Login",
+            RunBackground,
+            Color.White,
+            ButtonDefaults.outlinedButtonBorder(),
+            onClick = { Unit })
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(24.dp))
 
-        Text(
-            text = stringResource(R.string.Terms_and_Services),
-            fontWeight = FontWeight.W300,
-            color = Color.White,
-            textAlign = TextAlign.Center,
-            modifier = Modifier.fillMaxWidth(0.9f)
-        )
+        TermsAndServicesText()
+
+        Spacer(modifier = Modifier.height(16.dp))
     }
 }
 
 @Composable
-fun LogButton(text: String, containerColor: Color, contentColor: Color, border: BorderStroke?) {
+fun LogButton(
+    text: String,
+    containerColor: Color,
+    contentColor: Color,
+    border: BorderStroke? = null,
+    onClick: () -> Unit = {}
+) {
     Button(
-        onClick = {
-            // TODO:
-        },
+        onClick = onClick,
         modifier = Modifier
-            .fillMaxWidth(),
+            .fillMaxWidth().height(56.dp),
         shape = RoundedCornerShape(12.dp),
         colors = ButtonDefaults.buttonColors(
             contentColor = contentColor,
