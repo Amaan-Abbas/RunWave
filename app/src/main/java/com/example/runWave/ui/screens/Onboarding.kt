@@ -1,6 +1,5 @@
 package com.example.runWave.ui.screens
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -18,7 +17,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Bolt
-import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -37,6 +35,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.runWave.R
+import com.example.runWave.ui.components.LogButton
+import com.example.runWave.ui.components.TermsAndServicesText
 import com.example.runWave.ui.theme.RunBackground
 import com.example.runWave.ui.theme.RunYellow
 
@@ -132,30 +132,6 @@ fun OnboardingPage(
     }
 }
 
-@Composable
-fun LogButton(
-    text: String,
-    containerColor: Color,
-    contentColor: Color,
-    border: BorderStroke? = null,
-    onClick: () -> Unit = {}
-) {
-    Button(
-        onClick = onClick,
-        modifier = Modifier
-            .fillMaxWidth().height(56.dp),
-        shape = RoundedCornerShape(12.dp),
-        colors = ButtonDefaults.buttonColors(
-            contentColor = contentColor,
-            containerColor = containerColor
-        ),
-        border = border
-    ) {
-        Text(
-            text = text
-        )
-    }
-}
 
 @Preview(
     showBackground = true,

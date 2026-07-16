@@ -18,7 +18,7 @@ import com.example.runWave.data.local.entity.RunEntity
 
 @Composable
 fun RunCard(run: RunEntity) {
-    val title = generateRunTitle(run.dateTimeStart)
+//    val title = generateRunTitle(run.dateTimeStart)
 
     Card(
         modifier = Modifier
@@ -30,10 +30,10 @@ fun RunCard(run: RunEntity) {
             modifier = Modifier
                 .padding(16.dp)
         ) {
-            Text(
-                text = title,
-                fontWeight = FontWeight.Bold
-            )
+//            Text(
+//                text = title,
+//                fontWeight = FontWeight.Bold
+//            )
 
             Spacer(modifier = Modifier.height(8.dp))
 
