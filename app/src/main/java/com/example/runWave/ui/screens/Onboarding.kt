@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.ArrowForward
 import androidx.compose.material.icons.outlined.Bolt
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -35,7 +36,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.runWave.R
-import com.example.runWave.ui.components.LogButton
+import com.example.runWave.ui.components.NavigationButton
 import com.example.runWave.ui.components.TermsAndServicesText
 import com.example.runWave.ui.theme.RunBackground
 import com.example.runWave.ui.theme.RunYellow
@@ -113,15 +114,22 @@ fun OnboardingPage(
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        LogButton("Sign up", RunYellow, Color.Black, null)
+        NavigationButton(
+            "Sign up",
+            RunYellow,
+            Color.Black,
+            null,
+            icon = Icons.AutoMirrored.Outlined.ArrowForward
+        )
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        LogButton(
+        NavigationButton(
             "Login",
             RunBackground,
             Color.White,
             ButtonDefaults.outlinedButtonBorder(),
+            icon = Icons.AutoMirrored.Outlined.ArrowForward,
             onClick = { Unit })
 
         Spacer(modifier = Modifier.height(24.dp))

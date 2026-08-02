@@ -1,0 +1,4 @@
+- [x] Update `HomeScreen.kt` for sticky navigation and state passing
+- [x] Update `BottomNavigation.kt` with state-aware logic and aesthetic improvements
+- [x] Verify with Compose Preview
+- [/] Create walkthrough

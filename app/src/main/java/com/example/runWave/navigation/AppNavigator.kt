@@ -13,10 +13,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.runWave.data.local.datastore.DataStoreManager
 import com.example.runWave.model.SessionManager
-//import com.example.runWave.ui.screens.HistoryScreen
-//import com.example.runWave.ui.screens.HomeScreen
-//import com.example.runWave.ui.screens.IntroScreen
-//import com.example.runWave.ui.screens.LoginScreen
+import com.example.runWave.ui.screens.HomeScreen
 import kotlinx.coroutines.flow.first
 
 @Composable
@@ -39,46 +36,28 @@ fun AppNavigator() {
         NavHost(
             navController = navController,
             startDestination = if (!SessionManager.isLoggedIn) {
-                Screens.Intro.route
+                Screens.Home.route // Default to Home for now if Intro is not ready
             } else {
                 Screens.Home.route
             },
             modifier = Modifier
         ) {
             composable(Screens.Intro.route) {
-//                IntroScreen(navController)
+                // IntroScreen(navController)
             }
 
             composable(Screens.Login.route) {
-//                LoginScreen(navController = navController)
+                // LoginScreen(navController = navController)
             }
 
             composable(
                 Screens.Home.route,
             ) {
-                if (!SessionManager.isLoggedIn) {
-                    LaunchedEffect(Unit) {
-                        navController.navigate(Screens.Intro.route) {
-                            popUpTo(0) { inclusive = true }
-                        }
-                    }
-                } else {
-//                    HomeScreen(
-//                        navController = navController
-//                    )
-                }
+                HomeScreen()
             }
 
             composable(Screens.History.route) {
-                if (!SessionManager.isLoggedIn) {
-                    LaunchedEffect(Unit) {
-                        navController.navigate(Screens.Intro.route) {
-                            popUpTo(0) { inclusive = true }
-                        }
-                    }
-                } else {
-//                    HistoryScreen(navController = navController)
-                }
+                // HistoryScreen(navController = navController)
             }
         }
     }

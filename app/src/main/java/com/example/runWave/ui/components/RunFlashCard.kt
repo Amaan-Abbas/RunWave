@@ -1,6 +1,5 @@
 package com.example.runWave.ui.components
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -35,6 +34,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
@@ -42,7 +42,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.runWave.ui.theme.CardBackground
-import com.example.runWave.ui.theme.CardBorder
 import com.example.runWave.ui.theme.RunYellow
 
 @Composable
@@ -54,14 +53,20 @@ fun RunFlashCard(
         modifier = modifier
             .fillMaxWidth()
             .height(260.dp) // Adjusted height for full content
-            .padding(horizontal = 20.dp),
+            .shadow(
+                elevation = 6.dp,
+                shape = RoundedCornerShape(28.dp),
+                ambientColor = Color.Black.copy(alpha = 0.4f),
+                spotColor = Color.Black.copy(alpha = 0.4f)
+            ),
+//            .padding(horizontal = 20.dp),
         shape = RoundedCornerShape(28.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.Black,
+            containerColor = CardBackground,
             contentColor = Color.White
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
-        border = BorderStroke(width = 1.dp, color = CardBorder.copy(0.3f)),
+//        border = BorderStroke(width = 1.dp, color = CardBorder.copy(0.35f))
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             // --- HEADER SECTION ---
@@ -102,7 +107,10 @@ fun RunFlashCard(
                 }
 
                 // Comparison section on the right
-                Column(horizontalAlignment = Alignment.End) {
+                Column(
+                    horizontalAlignment = Alignment.End,
+                    modifier = modifier.padding(end = 10.dp)
+                ) {
                     Text(text = "vs Last Week", color = Color.Gray, fontSize = 10.sp)
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Icon(

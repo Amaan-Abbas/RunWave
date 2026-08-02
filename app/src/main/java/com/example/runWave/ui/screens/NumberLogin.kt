@@ -15,6 +15,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.ArrowForward
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
@@ -40,7 +42,7 @@ import androidx.compose.ui.unit.sp
 import com.example.runWave.R
 import com.example.runWave.model.CountryProvider
 import com.example.runWave.ui.components.CountryCodePicker
-import com.example.runWave.ui.components.LogButton
+import com.example.runWave.ui.components.NavigationButton
 import com.example.runWave.ui.components.PhoneTextField
 import com.example.runWave.ui.components.SwitchLogMethod
 import com.example.runWave.ui.theme.RunBackground
@@ -145,10 +147,11 @@ fun PhoneLogin(
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        LogButton(
+        NavigationButton(
             text = "Send OTP",
             containerColor = RunYellow,
             contentColor = Color.Black,
+            icon = Icons.AutoMirrored.Outlined.ArrowForward,
             onClick = { /* Send OTP logic */ }
         )
 
@@ -178,11 +181,12 @@ fun PhoneLogin(
 
         Spacer(modifier = Modifier.height(36.dp))
 
-        LogButton(
+        NavigationButton(
             text = "Continue with Email",
             containerColor = RunBackground,
             contentColor = Color.White,
             border = ButtonDefaults.outlinedButtonBorder(),
+            icon = Icons.AutoMirrored.Outlined.ArrowForward,
             onClick = { /* continue with email logic when clicked */ }
         )
 
@@ -196,9 +200,6 @@ fun PhoneLogin(
         )
     }
 }
-
-
-
 
 
 @Preview(showSystemUi = true, showBackground = true)

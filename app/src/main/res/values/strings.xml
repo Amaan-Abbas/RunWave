@@ -4,4 +4,10 @@
     <string name="track_your_runs">Track Your Runs.</string>
     <string name="stay_consistent">Stay Consistent.</string>
     <string name="Terms_and_Services">By continuing, you agree to our Terms of Service and Privacy Policy.</string>
+
+    <!-- Profile Completion Banner -->
+    <string name="complete_profile_title">Complete your profile</string>
+    <string name="complete_profile_subtitle">Unlock custom training stats and insights</string>
+    <string name="cd_close_banner">Close profile completion banner</string>
+    <string name="cd_go_to_profile">Go to profile completion</string>
 </resources>

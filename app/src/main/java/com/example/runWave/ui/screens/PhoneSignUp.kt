@@ -1,25 +1,23 @@
 package com.example.runWave.ui.screens
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.ArrowForward
 import androidx.compose.material.icons.outlined.Person2
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -39,7 +37,7 @@ import androidx.compose.ui.unit.sp
 import com.example.runWave.model.CountryProvider
 import com.example.runWave.ui.components.CountryCodePicker
 import com.example.runWave.ui.components.HeaderAndNav
-import com.example.runWave.ui.components.LogButton
+import com.example.runWave.ui.components.NavigationButton
 import com.example.runWave.ui.components.PhoneTextField
 import com.example.runWave.ui.components.RunWaveTextField
 import com.example.runWave.ui.components.SwitchLogMethod
@@ -75,16 +73,17 @@ fun PhoneSignUp(
         }
     }
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(RunBackground)
-            .padding(WindowInsets.safeDrawing.asPaddingValues())
-    ) {
-        HeaderAndNav(text = "Sign Up")
-
+    Scaffold(
+        modifier = modifier.fillMaxSize(),
+        containerColor = RunBackground,
+        topBar = {
+            HeaderAndNav(text = "Sign Up")
+        }
+    ) { innerPadding ->
         LazyColumn(
-            modifier = Modifier.padding(horizontal = 24.dp, vertical = 36.dp)
+            modifier = Modifier
+                .padding(innerPadding),
+            contentPadding = PaddingValues(horizontal = 24.dp, vertical = 36.dp)
         ) {
             item {
                 Text(
@@ -167,10 +166,11 @@ fun PhoneSignUp(
             }
 
             item {
-                LogButton(
+                NavigationButton(
                     text = "Send OTP",
                     containerColor = RunYellow,
                     contentColor = Color.Black,
+                    icon = Icons.AutoMirrored.Outlined.ArrowForward,
                     onClick = { /* Send OTP logic */ }
                 )
 
@@ -204,11 +204,12 @@ fun PhoneSignUp(
             }
 
             item {
-                LogButton(
+                NavigationButton(
                     text = "Continue with Email",
                     containerColor = RunBackground,
                     contentColor = Color.White,
                     border = ButtonDefaults.outlinedButtonBorder(),
+                    icon = Icons.AutoMirrored.Outlined.ArrowForward,
                     onClick = { /* continue with email logic when clicked */ }
                 )
 
