@@ -53,6 +53,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         ) {
             item {
                 Text(
+                    // Here need the program to get the name data to be fetched from the user username (It can be fetched from the users email if login from email else ask it from user during mobile number registration.).
                     text = "Hi, Amaan 👋",
                     color = Color.White,
                     fontWeight = FontWeight.Bold,
