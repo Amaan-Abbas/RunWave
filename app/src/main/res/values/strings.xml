@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Learning</string>
+    <string name="app_name">RunWave</string>
     <string name="OnBoarding_tagLine">Master the road and outpace your previous self with precision tracking designed for those who give it all.</string>
     <string name="track_your_runs">Track Your Runs.</string>
     <string name="stay_consistent">Stay Consistent.</string>
